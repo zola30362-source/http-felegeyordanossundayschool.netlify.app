@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ፈለገ ዮርዳኖስ - አስተዳዳሪ ክፍል ያለው</title>
+    <title>ፈለገ ዮርዳኖስ ሰንበት ት/ቤት</title>
     <style>
         :root {
             --primary-bg: #0c1c3c;
@@ -19,9 +19,9 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         /* Logo & Vision */
-        .logo-container { width: 120px; height: 120px; margin: 0 auto 15px; border: 4px solid white; border-radius: 50%; background: white; display: flex; justify-content: center; align-items: center; overflow: hidden; }
-        .logo-container img { width: 85%; object-fit: contain; }
-        .vision-card { background: rgba(255, 255, 255, 0.08); border-radius: 15px; padding: 15px; margin: 15px 0; border: 1px solid var(--accent-gold); text-align: center; max-width: 400px; }
+        .logo-container { width: 120px; height: 120px; margin: 0 auto 15px; border: 4px solid white; border-radius: 50%; background: white; display: flex; justify-content: center; align-items: center; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .logo-container img { width: 100%; height: 100%; object-fit: cover; }
+        .vision-card { background: rgba(255, 255, 255, 0.08); border-radius: 15px; padding: 20px; margin: 15px 0; border: 1px solid var(--accent-gold); text-align: center; max-width: 400px; }
 
         /* UI Elements */
         .header { width: 100%; max-width: 420px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
@@ -29,32 +29,31 @@
         .pay-btn, .enter-btn { background: var(--gradient); color: #0c1c3c; width: 100%; max-width: 400px; padding: 15px; border-radius: 30px; border: none; font-size: 1.2rem; font-weight: bold; cursor: pointer; margin-top: 10px; }
         
         /* Drawer Menu */
-        .drawer { position: fixed; top: 0; left: -100%; width: 80%; height: 100%; background: var(--drawer-bg); z-index: 1500; transition: 0.4s; padding: 25px; box-sizing: border-box; }
+        .drawer { position: fixed; top: 0; left: -100%; width: 80%; height: 100%; background: var(--drawer-bg); z-index: 1500; transition: 0.4s; padding: 25px; box-sizing: border-box; overflow-y: auto; }
         .drawer.open { left: 0; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; z-index: 1400; }
         .overlay.show { display: block; }
-        .menu-item { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); cursor: pointer; }
+        .menu-item { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); cursor: pointer; display: flex; align-items: center; gap: 10px; }
 
-        /* Admin & Story Styles */
-        .story-card { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid var(--accent-gold); width: 100%; box-sizing: border-box; }
-        .admin-form { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
-        input, textarea { padding: 12px; border-radius: 8px; border: none; font-size: 1rem; }
-        .edit-btn { background: #2ecc71; color: white; border: none; padding: 5px 10px; border-radius: 5px; margin-right: 5px; }
-        .del-btn { background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; }
-
-        /* Modal */
+        /* Modals & Search */
         .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary-bg); z-index: 2000; display: none; padding: 25px; box-sizing: border-box; overflow-y: auto; }
+        .search-box { display: flex; gap: 10px; margin-bottom: 20px; }
+        .search-box input { flex: 1; padding: 12px; border-radius: 8px; border: none; outline: none; font-size: 1rem; }
+        .result-card { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 10px; border-left: 4px solid var(--accent-gold); }
     </style>
 </head>
 <body>
 
 <div id="frontPage" class="page active-page">
     <div class="logo-container"><img src="https://i.postimg.cc/4dpL51z6/1775740880623.png"></div>
-    <h1>ፈለገ ዮርዳኖስ</h1>
+    <h2 style="margin:0;">ፈለገ ዮርዳኖስ ሰ / ት / ቤት</h2>
+    <p style="color:var(--accent-gold); font-weight:bold; margin-top:5px;">ከአባል ለአባል ድጋፍ መሥጫ</p>
+
     <div class="vision-card">
-        <b style="color:var(--accent-gold)">የሰንበት ትምህርት ቤቱ ራዕይ</b>
-        <p>ቅድስት ቤተ-ክርስቲያንን እምነት እና ሥርዓት ሳይበረዝ ለትውልድ ማስተላለፍ የሚችል ትውልድ ሆኖ ማየት።</p>
+        <b style="color:var(--accent-gold); display:block; margin-bottom:10px;">የሰንበት ትምህርት ቤቱ ራዕይ</b>
+        <p>የቅዱሳን መገኛና መከበሪያ የሆነች ቅድስት ቤተ-ክርስቲያንን እምነት እና ሥርዓት ሳይበረዝ ሳይለወጥ ለትውልድ ማስተላለፍ የሚችል ትውልድ ሆኖ ማየት።</p>
     </div>
+
     <button class="enter-btn" onclick="goToPage('donationPage')">ወደ ውስጥ ይግቡ</button>
 </div>
 
@@ -62,53 +61,69 @@
     <div class="header">
         <span class="icon-btn" onclick="toggleNav()">☰</span>
         <b>የመዋጮ ገጽ</b>
-        <span class="icon-btn">🔍</span>
+        <span class="icon-btn" onclick="openSearch()">🔍</span>
     </div>
+    
     <div style="background:rgba(0,0,0,0.3); padding:20px; border-radius:15px; width:100%; max-width:400px; text-align:center;">
-        <h3 id="helpTitle">የአባላት መዋጮ</h3>
-        <input type="number" id="amtInput" value="500" style="background:transparent; color:var(--accent-gold); font-size:2.5rem; width:100%; text-align:center; font-weight:bold;">
+        <h3 id="helpTitle">ፍቃደኛ የሆኑ የአባላት መዋጮ</h3>
+        <input type="number" id="amtInput" value="500" style="background:transparent; border:none; color:var(--accent-gold); font-size:2.5rem; width:100%; text-align:center; font-weight:bold; outline:none;">
     </div>
+    
     <button class="pay-btn" onclick="pay()">❤️ አሁኑኑ ይለግሱ</button>
 </div>
 
 <div class="overlay" id="overlay" onclick="toggleNav()"></div>
 <div class="drawer" id="drawer">
-    <h2>ዝርዝር</h2>
-    <div class="menu-item" onclick="showStories()">📜 የሚረዱ አባላት ስመ ክርስትና እና አጭር ታሪክ</div>
-    <div class="menu-item" onclick="selectType('ፍቃደኛ የሆኑ የአባላት መዋጮ', 100)">🏠 ፍቃደኛ የሆኑ የአባላት መዋጮ</div>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h2 style="color:var(--accent-gold); margin:0;">ዝርዝር</h2>
+        <span onclick="toggleNav()" style="font-size:1.5rem; cursor:pointer;">✕</span>
+    </div>
+    
+    <div class="menu-item" onclick="showModal('stories')">📜 የሚረዱ አባላት ስመ ክርስትና እና አጭር ታሪክ</div>
+    <div class="menu-item" onclick="selectType('ፍቃደኛ የሆኑ የአባላት መዋጮ', 500)">🏠 ከአባላት በፍቃደኝነት የሚለገስ</div>
     <div class="menu-item" onclick="selectType('የአባል ቤት ኪራይ ድጋፍ', 5000)">🏢 የአባል ቤት ኪራይ ድጋፍ</div>
-    <hr>
-    <div class="menu-item" onclick="showModal('about')">ℹ️ ስለ እኛ</div>
+    
+    <hr style="opacity:0.2; margin: 20px 0;">
+    <div class="menu-item" onclick="showModal('about')">ℹ️ ስለ እኛ (About)</div>
     <div class="menu-item" onclick="showAdmin()" style="color:var(--accent-gold); font-weight:bold;">⚙️ Admin (መረጃ ማስተካከያ)</div>
 </div>
 
 <div id="infoModal" class="modal">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
         <h2 id="modalTitle" style="color:var(--accent-gold)"></h2>
         <span onclick="closeModal()" style="font-size:2rem; cursor:pointer;">✕</span>
     </div>
     <div id="modalBody"></div>
 </div>
 
+<div id="searchModal" class="modal">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h2 style="color:var(--accent-gold)">ይፈልጉ</h2>
+        <span onclick="closeModal()" style="font-size:2rem; cursor:pointer;">✕</span>
+    </div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="ራዕይ፣ ታሪክ፣ መዋጮ..." onkeyup="runSearch()">
+    </div>
+    <div id="searchResults"></div>
+</div>
+
 <div id="adminModal" class="modal">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
         <h2 style="color:var(--accent-gold)">አስተዳዳሪ ክፍል</h2>
         <span onclick="closeModal()" style="font-size:2rem; cursor:pointer;">✕</span>
     </div>
-    
-    <div class="admin-form">
-        <input type="hidden" id="editIndex">
-        <input type="text" id="memberName" placeholder="ስመ ክርስትና / ስም">
-        <textarea id="memberStory" placeholder="የአባሉ ታሪክ..." rows="4"></textarea>
-        <button onclick="saveStory()" id="saveBtn" style="background:var(--accent-gold); padding:12px; border:none; border-radius:8px; font-weight:bold;">መረጃውን መዝግብ</button>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+        <input type="text" id="adminName" placeholder="ስመ ክርስትና">
+        <textarea id="adminStory" placeholder="ታሪክ..." rows="4" style="padding:10px; border-radius:8px;"></textarea>
+        <button onclick="saveStory()" style="background:var(--accent-gold); border:none; padding:12px; border-radius:8px; font-weight:bold;">መረጃውን መዝግብ</button>
     </div>
-
-    <h3>ያሉ መረጃዎች</h3>
-    <div id="adminList"></div>
+    <div id="adminList" style="margin-top:20px;"></div>
 </div>
 
 <script>
-    // መረጃዎችን ከ Browser ማህደረ ትውስታ (LocalStorage) መውሰድ
+    const visionText = "የሰንበት ትምህርት ቤቱ ራዕይ፦ የቅዱሳን መገኛና መከበሪያ የሆነች ቅድስት ቤተ-ክርስቲያንን እምነት እና ሥርዓት ሳይበረዝ ሳይለወጥ ለትውልድ ማስተላለፍ የሚችል ትውልድ ሆኖ ማየት።";
+    const aboutText = "ፈለገ ዮርዳኖስ ሰንበት ትምህርት ቤት በደብረ መዊዕ ቅዱስ ሚካኤል ካቴድራል ስር የሚገኝ ሲሆን፤ ዓላማውም በቅዱሳን መጽሐፍት እና በቤተክርስቲያን ትውፊት የተመሠረተ ትምህርትን ለምዕመናን በማድረስ፤ በትውልድ መካከል የእምነት እና የባህል ሰንሰለትን ማጠንከር ነው።";
+    
     let stories = JSON.parse(localStorage.getItem('memberStories')) || [
         { name: "ገብረ ማርያም", text: "ለረጅም ጊዜ በህመም ምክንያት ስራ አቁመው የነበሩ አባል ናቸው።" }
     ];
@@ -123,9 +138,9 @@
         document.getElementById("overlay").classList.toggle("show");
     }
 
-    function closeModal() {
-        document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
-    }
+    function closeModal() { document.querySelectorAll('.modal').forEach(m => m.style.display = 'none'); }
+
+    function openSearch() { document.getElementById("searchModal").style.display = 'block'; document.getElementById("searchInput").focus(); }
 
     function selectType(name, amt) {
         document.getElementById("helpTitle").innerText = name;
@@ -133,93 +148,62 @@
         toggleNav();
     }
 
-    // የታሪክ ማሳያ
-    function showStories() {
+    function showModal(type) {
         const body = document.getElementById("modalBody");
-        document.getElementById("modalTitle").innerText = "የሚረዱ አባላት ታሪክ";
-        body.innerHTML = stories.map(s => `
-            <div class="story-card">
-                <b>ስመ ክርስትና፦ ${s.name}</b><br>
-                <p>${s.text}</p>
-            </div>
-        `).join('');
+        const title = document.getElementById("modalTitle");
+        if(type === 'about') {
+            title.innerText = "ስለ እኛ";
+            body.innerHTML = aboutText;
+        } else {
+            title.innerText = "የአባላት ታሪክ";
+            body.innerHTML = stories.map(s => `<div class="result-card"><b>${s.name}</b><p>${s.text}</p></div>`).join('');
+        }
         document.getElementById("infoModal").style.display = 'block';
         toggleNav();
     }
 
-    // አድሚን ክፍል ማሳያ
-    function showAdmin() {
-        renderAdminList();
-        document.getElementById("adminModal").style.display = 'block';
-        toggleNav();
+    function runSearch() {
+        const query = document.getElementById("searchInput").value.toLowerCase();
+        const results = document.getElementById("searchResults");
+        let html = "";
+        if(!query) { results.innerHTML = ""; return; }
+
+        if(visionText.toLowerCase().includes(query)) html += `<div class="result-card"><b>ራዕይ</b><p>${visionText}</p></div>`;
+        if(aboutText.toLowerCase().includes(query)) html += `<div class="result-card"><b>ስለ እኛ</b><p>${aboutText}</p></div>`;
+        
+        stories.forEach(s => {
+            if(s.name.toLowerCase().includes(query) || s.text.toLowerCase().includes(query)) {
+                html += `<div class="result-card"><b>የአባላት ታሪክ (${s.name})</b><p>${s.text}</p></div>`;
+            }
+        });
+        results.innerHTML = html || "<p>ምንም ውጤት አልተገኘም</p>";
     }
 
-    // መረጃን መመዝገብ እና ማዘመን
+    function showAdmin() { renderAdminList(); document.getElementById("adminModal").style.display = 'block'; toggleNav(); }
+
     function saveStory() {
-        const name = document.getElementById("memberName").value;
-        const text = document.getElementById("memberStory").value;
-        const editIndex = document.getElementById("editIndex").value;
-
-        if(!name || !text) return alert("እባክዎ መረጃውን ያሟሉ");
-
-        if(editIndex === "") {
+        const name = document.getElementById("adminName").value;
+        const text = document.getElementById("adminStory").value;
+        if(name && text) {
             stories.push({ name, text });
-        } else {
-            stories[editIndex] = { name, text };
-            document.getElementById("editIndex").value = "";
-            document.getElementById("saveBtn").innerText = "መረጃውን መዝግብ";
-        }
-
-        localStorage.setItem('memberStories', JSON.stringify(stories));
-        document.getElementById("memberName").value = "";
-        document.getElementById("memberStory").value = "";
-        renderAdminList();
-        alert("መረጃው ተዘምኗል!");
-    }
-
-    // በአድሚን ገጽ ላይ ዝርዝሩን ማሳያ
-    function renderAdminList() {
-        const list = document.getElementById("adminList");
-        list.innerHTML = stories.map((s, i) => `
-            <div class="story-card">
-                <b>${s.name}</b>
-                <div style="margin-top:10px;">
-                    <button class="edit-btn" onclick="editStory(${i})">Edit</button>
-                    <button class="del-btn" onclick="deleteStory(${i})">Delete</button>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    function editStory(i) {
-        document.getElementById("memberName").value = stories[i].name;
-        document.getElementById("memberStory").value = stories[i].text;
-        document.getElementById("editIndex").value = i;
-        document.getElementById("saveBtn").innerText = "አሁን አዘምን (Update)";
-    }
-
-    function deleteStory(i) {
-        if(confirm("ይህ መረጃ ይጥፋ?")) {
-            stories.splice(i, 1);
             localStorage.setItem('memberStories', JSON.stringify(stories));
+            alert("ተመዝግቧል!");
             renderAdminList();
         }
     }
 
-    function showModal(type) {
-        const body = document.getElementById("modalBody");
-        if(type === 'about') {
-            document.getElementById("modalTitle").innerText = "ስለ እኛ";
-            body.innerHTML = "ፈለገ ዮርዳኖስ ሰንበት ትምህርት ቤት በደብረ መዊዕ ቅዱስ ሚካኤል ካቴድራል ስር የሚገኝ ተቋም ነው።";
-        }
-        document.getElementById("infoModal").style.display = 'block';
-        toggleNav();
+    function renderAdminList() {
+        document.getElementById("adminList").innerHTML = stories.map((s, i) => `
+            <div class="result-card">
+                <b>${s.name}</b>
+                <button onclick="deleteStory(${i})" style="color:red; background:none; border:none; cursor:pointer;">ሰርዝ</button>
+            </div>
+        `).join('');
     }
 
-    function pay() {
-        window.location.href = "https://checkout.chapa.co/checkout/web/payment/PL-sbnpvxJljdSA";
-    }
+    function deleteStory(i) { stories.splice(i, 1); localStorage.setItem('memberStories', JSON.stringify(stories)); renderAdminList(); }
+
+    function pay() { window.location.href = "https://checkout.chapa.co/checkout/web/payment/PL-sbnpvxJljdSA"; }
 </script>
-
 </body>
 </html>
