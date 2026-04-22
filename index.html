@@ -11,47 +11,50 @@
             --drawer-bg: #1a2c4c;
             --white: #ffffff;
             --gradient: linear-gradient(135deg, #e67e22, #f1c40f);
-        }
+        } 
 
         body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--primary-bg); color: var(--white); overflow-x: hidden; }
         .page { display: none; width: 100%; min-height: 100vh; flex-direction: column; align-items: center; padding: 20px; box-sizing: border-box; }
         .active-page { display: flex; animation: fadeIn 0.5s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } 
 
         /* Logo Styling */
         .logo-container { width: 130px; height: 130px; margin: 0 auto 20px; border: 4px solid var(--white); border-radius: 50%; background: white; overflow: hidden; display: flex; justify-content: center; align-items: center; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
-        .logo-container img { width: 85%; object-fit: contain; }
+        .logo-container img { width: 85%; object-fit: contain; } 
 
         /* Vision Card */
         .vision-card { background: rgba(255, 255, 255, 0.08); border-radius: 15px; padding: 20px; margin: 20px 0; border: 1px solid var(--accent-gold); max-width: 400px; text-align: center; }
-        .vision-title { color: var(--accent-gold); font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; display: block; }
+        .vision-title { color: var(--accent-gold); font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; display: block; } 
 
-        .enter-btn { background: var(--gradient); color: #0c1c3c; padding: 15px 45px; border-radius: 35px; font-size: 1.2rem; font-weight: bold; border: none; cursor: pointer; margin-top: 15px; }
+        .enter-btn { background: var(--gradient); color: #0c1c3c; padding: 15px 45px; border-radius: 35px; font-size: 1.2rem; font-weight: bold; border: none; cursor: pointer; margin-top: 15px; } 
 
         /* Header */
         .header { width: 100%; max-width: 420px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .icon-btn { font-size: 1.7rem; cursor: pointer; color: var(--white); }
+        .icon-btn { font-size: 1.7rem; cursor: pointer; color: var(--white); } 
 
         /* Search Overlay */
         #searchOverlay { position: fixed; top: -100%; left: 0; width: 100%; height: 100%; background: var(--primary-bg); z-index: 4000; transition: 0.4s; padding: 25px; box-sizing: border-box; }
         #searchOverlay.active { top: 0; }
         .search-box { display: flex; gap: 10px; margin-top: 20px; }
-        .search-box input { flex: 1; padding: 12px; border-radius: 8px; border: none; font-size: 1rem; outline: none; }
+        .search-box input { flex: 1; padding: 12px; border-radius: 8px; border: none; font-size: 1rem; outline: none; } 
 
         /* Donation UI */
-        .amount-display { border: 2px solid var(--accent-gold); border-radius: 12px; padding: 15px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.3); width: 100%; max-width: 400px; margin: 20px 0; }
-        .amount-display input { background: transparent; border: none; color: white; font-size: 2rem; text-align: right; width: 100%; outline: none; font-weight: bold; }
+        .amount-display { border: 2px solid var(--accent-gold); border-radius: 12px; padding: 15px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.3); width: 100%; max-width: 400px; margin: 10px 0; }
+        .amount-display input { background: transparent; border: none; color: white; font-size: 2rem; text-align: right; width: 100%; outline: none; font-weight: bold; } 
 
-        .pay-btn { background: var(--gradient); color: #0c1c3c; width: 100%; max-width: 420px; padding: 18px; border-radius: 50px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; }
+        /* Bank Info Card */
+        .bank-card { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 10px; margin-bottom: 20px; width: 100%; max-width: 400px; text-align: center; border: 1px dashed var(--accent-gold); }
+
+        .pay-btn { background: var(--gradient); color: #0c1c3c; width: 100%; max-width: 420px; padding: 18px; border-radius: 50px; border: none; font-size: 1.3rem; font-weight: bold; cursor: pointer; } 
 
         /* Drawer Menu */
         .drawer { position: fixed; top: 0; left: -100%; width: 80%; height: 100%; background: var(--drawer-bg); z-index: 1500; transition: 0.4s; padding: 25px; box-sizing: border-box; overflow-y: auto; }
         .drawer.open { left: 0; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; z-index: 1400; }
-        .overlay.show { display: block; }
+        .overlay.show { display: block; } 
 
         .menu-item { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); cursor: pointer; font-size: 1rem; display: flex; align-items: center; gap: 10px; }
-        .menu-sep { color: var(--accent-gold); font-size: 0.8rem; margin-top: 20px; display: block; text-transform: uppercase; letter-spacing: 1px; }
+        .menu-sep { color: var(--accent-gold); font-size: 0.8rem; margin-top: 20px; display: block; text-transform: uppercase; letter-spacing: 1px; } 
 
         /* Modal */
         .content-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary-bg); z-index: 3000; display: none; padding: 25px; box-sizing: border-box; overflow-y: auto; }
@@ -61,7 +64,7 @@
         .admin-input { width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; border: none; box-sizing: border-box; }
     </style>
 </head>
-<body>
+<body> 
 
 <div id="searchOverlay">
     <div style="display:flex; justify-content:space-between; align-items:center;">
@@ -72,9 +75,9 @@
         <input type="text" id="searchInput" placeholder="ራዕይ፣ መዋጮ፣ ስመ ክርስትና..." onkeyup="runSearch()">
     </div>
     <div id="searchResultArea" style="margin-top:30px; line-height:1.6;"></div>
-</div>
+</div> 
 
-<div class="overlay" id="overlay" onclick="toggleNav()"></div>
+<div class="overlay" id="overlay" onclick="toggleNav()"></div> 
 
 <div class="drawer" id="drawer">
     <div style="display:flex; justify-content:space-between; align-items:center;">
@@ -83,18 +86,18 @@
     </div>
     
     <span class="menu-sep">የአባላት ታሪክ</span>
-    <div class="menu-item" onclick="showModal('stories')">📜 የሚረዱ አባላት አጭር ታሪክና ስመ ክርስትና</div>
+    <div class="menu-item" onclick="showModal('stories')">📜 የሚረዱ አባላት አጭር ታሪክና ስመ ክርስትና</div> 
 
     <span class="menu-sep">የልገሳ ዘርፎች</span>
     <div class="menu-item" onclick="selectType('ፍቃደኛ ከሆኑ አባላት መዋጮ', 50)">🏠 ፍቃደኛ ከሆኑ አባላት መዋጮ</div>
     <div class="menu-item" onclick="selectType('ከአባላት በፍቃደኝነት የሚለገስ', 1000)">💎 ከአባላት በፍቃደኝነት የሚለገስ</div>
     <div class="menu-item" onclick="selectType('የቤት ኪራይ ድጋፍ', 5000)">🏢 የቤት ኪራይ ድጋፍ</div>
-    <div class="menu-item" onclick="selectType('የትምህርት ቤት ክፍያ', 3000)">🎓 የትምህርት ቤት ክፍያ</div>
+    <div class="menu-item" onclick="selectType('የትምህርት ቤት ክፍያ', 3000)">🎓 የትምህርት ቤት ክፍያ</div> 
 
     <span class="menu-sep">መረጃ</span>
     <div class="menu-item" onclick="showModal('about')">ℹ️ ስለ እኛ (About Us)</div>
     <div class="menu-item" onclick="showAdmin()" style="color:var(--accent-gold); font-weight:bold;">⚙️ Admin (መረጃ ማስተካከያ)</div>
-</div>
+</div> 
 
 <div id="contentModal" class="content-modal">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
@@ -102,76 +105,81 @@
         <span onclick="closeModal()" style="font-size:2rem; cursor:pointer;">✕</span>
     </div>
     <div id="modalBody" style="line-height:1.8;"></div>
-</div>
+</div> 
 
 <div id="frontPage" class="page active-page">
     <div class="logo-container">
         <img src="https://i.postimg.cc/4dpL51z6/1775740880623.png" alt="Logo">
     </div>
     <h1 style="margin:0;">ፈለገ ዮርዳኖስ</h1>
-    <p style="color:var(--accent-gold); margin-top:5px; font-weight:bold;">ሰንበት ትምህርት ቤት</p>
+    <p style="color:var(--accent-gold); margin-top:5px; font-weight:bold;">ሰንበት ትምህርት ቤት</p> 
 
     <div class="vision-card">
         <span class="vision-title">የሰንበት ትምህርት ቤቱ ራዕይ</span>
         <p>የቅዱሳን መገኛና መከበሪያ የሆነች ቅድስት ቤተ-ክርስቲያንን እምነት እና ሥርዓት ሳይበረዝ ሳይለወጥ ለትውልድ ማስተላለፍ የሚችል ትውልድ ሆኖ ማየት።</p>
-    </div>
+    </div> 
 
     <button class="enter-btn" onclick="goToPage('donationPage')">ወደ ውስጥ ይግቡ</button>
-</div>
+</div> 
 
 <div id="donationPage" class="page">
     <div class="header">
         <span class="icon-btn" onclick="toggleNav()">☰</span>
         <span style="font-weight:bold;">የመዋጮ ገጽ</span>
         <span class="icon-btn" onclick="toggleSearch()">🔍</span>
-    </div>
+    </div> 
 
     <div class="logo-container" style="width: 100px; height: 100px;">
         <img src="https://i.postimg.cc/4dpL51z6/1775740880623.png" alt="Logo">
-    </div>
+    </div> 
 
-    <div style="color:var(--accent-gold); font-weight:bold; font-size:1.1rem; margin-bottom:10px;" id="helpTitle">ፍቃደኛ ከሆኑ አባላት መዋጮ</div>
+    <div style="color:var(--accent-gold); font-weight:bold; font-size:1.1rem; margin-bottom:10px;" id="helpTitle">ፍቃደኛ ከሆኑ አባላት መዋጮ</div> 
+
+    <div class="bank-card">
+        <small style="opacity: 0.8;">የሙከራ ባንክ ሂሳብ ቁጥር፡</small><br>
+        <strong style="font-size: 1.2rem; color: var(--accent-gold);">1000746971072</strong>
+    </div>
 
     <div class="amount-display">
         <span style="color:var(--accent-gold); font-weight:bold;">ETB</span>
         <input type="number" id="amtInput" value="500">
-    </div>
+    </div> 
 
     <button class="pay-btn" onclick="pay()">❤️ አሁኑኑ ይለግሱ</button>
     <p style="font-size:0.8rem; color:#888; margin-top:20px;">በ Chapa ደህንነቱ የተጠበቀ ክፍያ</p>
-</div>
+</div> 
 
 <script>
     // ዳታዎች
     const staticData = {
         vision: "የሰንበት ትምህርት ቤቱ ራዕይ፦ የቅዱሳን መገኛና መከበሪያ የሆነች ቅድስት ቤተ-ክርስቲያንን እምነት እና ሥርዓት ሳይበረዝ ሳይለወጥ ለትውልድ ማስተላለፍ የሚችል ትውልድ ሆኖ ማየት።",
         about: "ፈለገ ዮርዳኖስ ሰንበት ትምህርት ቤት በደብረ መዊዕ ቅዱስ ሚካኤል ካቴድራል ስር የሚገኝ ሲሆን፣ ዓላማውም ትውልድን በሃይማኖትና በሥነ-ምግባር ማነጽ እንዲሁም በችግር ውስጥ ያሉ አባላትን መርዳት ነው።"
-    };
+    }; 
 
     let stories = JSON.parse(localStorage.getItem('memberStories')) || [
         { name: "ገብረ ማርያም", text: "ለረጅም ጊዜ በህመም ምክንያት ስራ አቁመው የነበሩ አባል ሲሆኑ፣ በአሁኑ ሰዓት ድጋፍ ይደረግላቸዋል።" }
-    ];
+    ]; 
 
     function goToPage(id) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
         document.getElementById(id).classList.add('active-page');
-    }
+    } 
 
     function toggleNav() {
         document.getElementById("drawer").classList.toggle("open");
         document.getElementById("overlay").classList.toggle("show");
-    }
+    } 
 
     function toggleSearch() {
         document.getElementById("searchOverlay").classList.toggle("active");
-    }
+    } 
 
-    function closeModal() { document.querySelectorAll('.content-modal').forEach(m => m.style.display = 'none'); }
+    function closeModal() { document.querySelectorAll('.content-modal').forEach(m => m.style.display = 'none'); } 
 
     function showModal(type) {
         const modal = document.getElementById("contentModal");
         const title = document.getElementById("modalTitle");
-        const body = document.getElementById("modalBody");
+        const body = document.getElementById("modalBody"); 
 
         if(type === 'about') {
             title.innerText = "ስለ እኛ";
@@ -182,19 +190,19 @@
         }
         modal.style.display = "block";
         toggleNav();
-    }
+    } 
 
     function selectType(name, amt) {
         document.getElementById("helpTitle").innerText = name;
         document.getElementById("amtInput").value = amt;
         toggleNav();
-    }
+    } 
 
     function runSearch() {
         const q = document.getElementById("searchInput").value.toLowerCase();
         const res = document.getElementById("searchResultArea");
         let html = "";
-        if(!q) { res.innerHTML = ""; return; }
+        if(!q) { res.innerHTML = ""; return; } 
 
         if(staticData.vision.toLowerCase().includes(q)) html += `<div class="result-card"><b>ራዕይ</b><br>${staticData.vision}</div>`;
         if(staticData.about.toLowerCase().includes(q)) html += `<div class="result-card"><b>ስለ እኛ</b><br>${staticData.about}</div>`;
@@ -205,7 +213,7 @@
             }
         });
         res.innerHTML = html || "<p>ምንም ውጤት አልተገኘም</p>";
-    }
+    } 
 
     // አድሚን ክፍል
     function showAdmin() {
@@ -221,7 +229,7 @@
         renderAdminList();
         document.getElementById("contentModal").style.display = "block";
         toggleNav();
-    }
+    } 
 
     function addStory() {
         const name = document.getElementById("newName").value;
@@ -232,7 +240,7 @@
             alert("ተመዝግቧል!");
             showAdmin();
         }
-    }
+    } 
 
     function renderAdminList() {
         const list = document.getElementById("adminList");
@@ -242,7 +250,7 @@
                 <button onclick="deleteStory(${i})" style="background:none; border:none; color:red; float:right; cursor:pointer;">ሰርዝ</button>
             </div>
         `).join('');
-    }
+    } 
 
     function deleteStory(i) {
         if(confirm("ይህ መረጃ ይጥፋ?")) {
@@ -250,10 +258,26 @@
             localStorage.setItem('memberStories', JSON.stringify(stories));
             renderAdminList();
         }
-    }
+    } 
 
-    function pay() { window.location.href = "https://checkout.chapa.co/checkout/web/payment/PL-sbnpvxJljdSA"; }
-</script>
+    // ክፍያ ተግባር (የተቀየረ)
+    function pay() { 
+        const amount = document.getElementById("amtInput").value;
+        const bankAcc = "1000746971072";
+        
+        if (amount <= 0 || !amount) {
+            alert("እባክዎ ትክክለኛ የገንዘብ መጠን ያስገቡ");
+            return;
+        }
+
+        const confirmPay = confirm(`መጠን፡ ${amount} ETB\nሂሳብ ቁጥር፡ ${bankAcc}\n\nወደ ክፍያ ገጽ ለመሄድ 'OK' ይበሉ።`);
+        
+        if(confirmPay) {
+            // Chapa Checkout Link
+            window.location.href = "https://checkout.chapa.co/checkout/web/payment/PL-sbnpvxJljdSA"; 
+        }
+    }
+</script> 
 
 </body>
 </html>
